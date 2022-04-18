@@ -9,6 +9,8 @@ import UIKit
 
 class TableViewController: UIViewController {
     
+    // MARK: - Property
+    
     private lazy var  searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
@@ -51,6 +53,8 @@ class TableViewController: UIViewController {
         fetchData()
     }
     
+    // MARK: - Request
+    
     func fetchData() {
         if let url = URL(string: "https://rickandmortyapi.com/api/character") {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -80,9 +84,13 @@ class TableViewController: UIViewController {
         }
     }
     
+    // MARK: - Hierarchy
+    
     private func setupHierarchy() {
         view.addSubview(tableView)
     }
+    
+    // MARK: - Layout
     
     private func setupLayout() {
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -91,6 +99,8 @@ class TableViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 }
+
+// MARK: - Extension UITableViewDelegate, UITableViewDataSource
 
 extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -117,6 +127,8 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - Extension UISearchResultsUpdating, UIScrollViewDelegate
+
 extension TableViewController: UISearchResultsUpdating, UIScrollViewDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -132,4 +144,3 @@ extension TableViewController: UISearchResultsUpdating, UIScrollViewDelegate {
         }
     }
 }
-

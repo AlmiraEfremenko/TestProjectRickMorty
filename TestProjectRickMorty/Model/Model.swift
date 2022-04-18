@@ -8,12 +8,14 @@
 import Foundation
 
 // MARK: - Characters
+
 struct Characters: Codable {
     let info: Info
     let results: [Character]
 }
 
 // MARK: - Info
+
 struct Info: Codable {
     let count, pages: Int
     let next: String
@@ -21,6 +23,7 @@ struct Info: Codable {
 }
 
 // MARK: - Result
+
 struct Character: Codable {
     let id: Int
     let name: String
@@ -42,6 +45,7 @@ enum Gender: String, Codable {
 }
 
 // MARK: - Location
+
 struct Location: Codable {
     let name: String
     let url: String

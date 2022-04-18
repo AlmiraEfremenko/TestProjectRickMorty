@@ -11,6 +11,8 @@ import UIKit
 
 class ViewControllerDetail: UIViewController {
     
+    // MARK: - Property
+    
     private lazy var stackView: UIStackView = {
         var stackView = UIStackView()
         stackView.axis = .vertical
@@ -94,6 +96,8 @@ class ViewControllerDetail: UIViewController {
         setupLayout()
     }
     
+    // MARK: - Hierarchy
+    
     private func setupHierarchy() {
         view.addSubview(stackView)
         stackView.addSubview(avatar)
@@ -105,8 +109,9 @@ class ViewControllerDetail: UIViewController {
         stackView.addSubview(episode)
     }
     
+    // MARK: - Layout
+    
     private func setupLayout() {
-        
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         stackView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -123,7 +128,6 @@ class ViewControllerDetail: UIViewController {
         
         gender.centerXAnchor.constraint(equalTo: stackView.centerXAnchor).isActive = true
         gender.topAnchor.constraint(equalTo: race.bottomAnchor, constant: 20).isActive = true
-        //gender.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -10).isActive = true
         
         status.centerXAnchor.constraint(equalTo: stackView.centerXAnchor).isActive = true
         status.topAnchor.constraint(equalTo: gender.bottomAnchor, constant: 20).isActive = true

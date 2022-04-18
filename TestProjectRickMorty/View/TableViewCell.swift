@@ -8,6 +8,8 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+  
+    // MARK: - Property
     
     static let identifire = "TableViewCell"
     
@@ -58,6 +60,8 @@ class TableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupHierarchy()
@@ -68,12 +72,16 @@ class TableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Hierarchy
+    
     private func setupHierarchy() {
         addSubview(avatar)
         addSubview(name)
         addSubview(race)
         addSubview(gender)
     }
+    
+    // MARK: - Layout
     
     private func setupLayout() {
         avatar.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
